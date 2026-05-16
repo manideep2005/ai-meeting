@@ -1,0 +1,23 @@
+Meeting Title: Project Phoenix Kickoff
+Date: May 14, 2024
+Attendees: Alice, Bob, Charlie
+
+Alice: Thanks for joining everyone. Today we're kicking off Project Phoenix. Our goal is to migrate the database to the new cloud provider by next month.
+
+Bob: I've already started looking at the schema differences. I think we can finish the mapping by Friday.
+
+Alice: Great, Bob. Can you handle the schema mapping and send the report by this Friday?
+
+Bob: Sure, I'll do that.
+
+Charlie: What about the security audit?
+
+Alice: Charlie, I'd like you to take lead on the security audit. We need that completed by May 25th.
+
+Charlie: Understood. I'll start the audit on Monday.
+
+Alice: We also decided to use the 'Premium' tier for the database for better performance.
+
+Bob: Agreed. It costs more but the latency reduction is worth it.
+
+Alice: Okay, decisions made. Bob will do mapping, Charlie will do security. Let's meet again next Tuesday.
