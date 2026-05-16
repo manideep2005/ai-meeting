@@ -1,52 +1,95 @@
-# AI Meeting Assistant
+# Syncra: AI-Powered Meeting & Workflow Assistant
 
-A premium web application to process meeting notes using local LLMs via Ollama.
+**Syncra** is a sophisticated, privacy-first meeting intelligence platform that transforms raw transcripts and notes into structured action plans. Built for high-performance teams, it leverages local Large Language Models (LLMs) to ensure your data remains secure and private.
 
-## Features
-- **Summary Generation**: 3-4 sentence overview of the meeting.
-- **Action Items**: Extract tasks, assignees, and deadlines.
-- **Key Decisions**: List important outcomes.
-- **Follow-up Email**: One-click professional email drafting.
-- **Local AI**: Powered by Ollama (Llama 3.2).
+---
 
-## Tech Stack
-- **Frontend**: Next.js 14, Tailwind CSS, Lucide React.
-- **Backend**: Node.js, Express, Multer, Axios.
-- **LLM**: Ollama (`llama3.2:1b` or higher).
+## ✨ Features
 
-## Setup Instructions
+### 🔍 Intelligent Processing
+- **Automated Summarization**: Get a concise 3-4 sentence overview of any meeting.
+- **Action Item Extraction**: Automatically identifies tasks, assignees, and deadlines.
+- **Decision Tracking**: Captures key outcomes and strategic pivots.
 
-### 1. Ollama Setup
-1. Install [Ollama](https://ollama.ai).
-2. Pull the model:
+### 🎥 Live Meeting Workspace
+- **Real-time Transcription**: Integrated Jitsi Meet video conferencing with live AI transcription.
+- **Instant Distillation**: Process live conversations into notes as soon as the meeting ends.
+
+### 📧 Automated Workflows
+- **One-Click Follow-ups**: Draft professional, clear follow-up emails based on meeting insights.
+- **Markdown Export**: Save and share results in a clean, portable format.
+
+### 💬 Meeting Intelligence Chat
+- **Context-Aware AI**: Chat with your meeting data to find specific details or ask clarifying questions.
+
+### 📂 Organized History
+- **Searchable Archive**: Store and manage all your past meetings in a central, local database.
+- **Title Personalization**: Name your sessions for easy identification.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: [Next.js 14](https://nextjs.org/) (App Router), [Tailwind CSS v4](https://tailwindcss.com/), [Lucide React](https://lucide.dev/)
+- **Backend**: [Node.js](https://nodejs.org/), [Express](https://expressjs.com/), [SQLite](https://sqlite.org/)
+- **AI Engine**: [Ollama](https://ollama.ai/) (Local LLM Execution)
+- **Video Conferencing**: [Jitsi Meet API](https://jitsi.org/projects/jitsi-meet/)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Ollama](https://ollama.ai/)
+
+### 2. LLM Setup
+1. Download and install Ollama.
+2. Pull the required models:
    ```bash
    ollama pull llama3.2:1b
+   ollama pull gemma:2b
    ```
 
-### 2. Backend Setup
-1. Navigate to `backend`:
+### 3. Backend Setup
+1. Navigate to the backend directory:
    ```bash
    cd backend
+   ```
+2. Install dependencies:
+   ```bash
    npm install
    ```
-2. Start the server:
+3. Start the server:
    ```bash
    npm start
    ```
+   The backend will run on `http://localhost:8000`.
 
-### 3. Frontend Setup
-1. Navigate to `frontend`:
+### 4. Frontend Setup
+1. Navigate to the frontend directory:
    ```bash
    cd frontend
+   ```
+2. Install dependencies:
+   ```bash
    npm install
    ```
-2. Start the dev server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
+   Access the app at `http://localhost:3000`.
 
-## Handling Incorrect Assignee Extraction
-LLMs can sometimes misidentify assignees if the context is ambiguous. To mitigate this:
-1. **Prompt Engineering**: We explicitly ask the LLM to use "Unassigned" if a name isn't clear.
-2. **Context Clues**: The prompt encourages looking for phrases like "I will", "can you", or "[Name] to handle".
-3. **User Editing**: The UI provides a "Draft Email" section where users can manually polish results before sending.
+---
+
+## 🧠 Handling AI Accuracy
+LLMs can occasionally misidentify assignees or misinterpret deadlines if the transcript is ambiguous. **Syncra** mitigates this through:
+- **Negative Constraint Prompting**: Forcing the model to use "Unassigned" instead of hallucinating names.
+- **Fallback Chains**: Automatically switching between models (Llama 3.2, Gemma) if the primary model fails or produces invalid JSON.
+- **User Verification**: Providing an editable interface for drafted emails and summaries.
+
+---
+
+## 📄 License
+This project is for educational/assignment purposes. Developed as part of the **AI-Powered Meeting & Workflow Assistant** challenge.
